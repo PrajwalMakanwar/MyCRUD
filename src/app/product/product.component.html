@@ -1,0 +1,19 @@
+<!--<a routerLink=""><- Back</a>-->
+<h3 class="col-md-4 col-md-offset-6 mt-5">
+    Add New Student
+</h3>
+<form id="formNewProduct" name="formNewProduct" #productData="ngForm" (ngSubmit)="addNewProduct(productData.value)" class="col-md-4 col-md-offset-6">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input type="text" class="form-control" id="name" name="name"  placeholder="Name" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="">Color</label>
+        <input type="text" class="form-control" id="color" name="color"  placeholder="Color" ngModel>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</form>
+<br>
+<h5 *ngIf="isAdded">
+    {{confirmationString}}
+</h5>

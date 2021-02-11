@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-dark ">
+    <a routerLink='student' class="btn btn-primary">Student Detail's</a>
+</nav>
+<router-outlet></router-outlet>
+<table class="table col-md-6 col-md-offset-6 mt-5 ml-5" >
+    <thead>
+       <th id="">Id</th>
+       <th id="">Name</th>
+       <th id="">Color</th>
+       <th></th>
+       <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let std of student"> 
+            <td>{{std.id}}</td>
+            <td>{{std.name}}</td>
+            <td>{{std.color}}</td>
+            <td (click)="deleteProduct(student.id)"><a routerLink="">Delete</a></td>
+            
+            <td><a [routerLink]="['/updateStudent', student.id]">Update</a></td>
+            
+        </tr>
+        <router-outlet></router-outlet>
+    </tbody>
+</table>
